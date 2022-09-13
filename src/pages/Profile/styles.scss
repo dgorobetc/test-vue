@@ -1,0 +1,23 @@
+.profile-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  .description-wrapper {
+    width: 320px;
+    span {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+  }
+  .md-list {
+    width: 320px;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid rgba(#000, 0.12);
+  }
+}
