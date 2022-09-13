@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://mysterious-reef-29460.herokuapp.com/api/v1";
+const BASE_URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1';
 const compareUrlString = (path) => BASE_URL + path;
 
 const loginHandlerAsync = async ({ email, password }) => {

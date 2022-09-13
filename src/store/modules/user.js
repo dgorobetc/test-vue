@@ -59,9 +59,6 @@ export default {
     },
   },
   getters: {
-    isLogginLoading(state) {
-      return state.isLoading;
-    },
     isAutorized(state) {
       return state.isAutorized;
     },

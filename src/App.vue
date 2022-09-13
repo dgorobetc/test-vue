@@ -7,14 +7,16 @@
 
 <script lang="js">
 import Header from './components/Header/';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: "App",
   components: {
     Header
   },
-  computed: mapGetters(['isAutorized']),
+  computed: mapState({
+    isAutorized: ({ user }) =>  user.isAutorized
+  }),
   created() {
     if(this.isAutorized) {
       this.$router.push({name: "profile-page"});

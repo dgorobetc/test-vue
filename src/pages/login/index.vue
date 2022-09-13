@@ -1,6 +1,6 @@
 <script lang="js">
 import Input from '@/components/Field';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 export default {
   name: "login-page",
   data: function() {
@@ -9,8 +9,8 @@ export default {
       password: ''
     }
   },
-  computed: mapGetters({
-    isLoading: 'isLogginLoading',
+  computed: mapState({
+    isLoading: ({ user }) => user.isLoading,
   }),
   methods: {
     loginHandler() {

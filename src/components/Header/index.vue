@@ -4,10 +4,10 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/profile">Profile</router-link>
+          <router-link :to="{ name: 'profile-page' }">Profile</router-link>
         </li>
         <li>
-          <router-link to="/about">About</router-link>
+          <router-link :to="{ name: 'profile-page' }">About</router-link>
         </li>
       </ul>
     </nav>

@@ -2,11 +2,11 @@
   <div class="form__group field">
     <input
       type="input"
-      v-bind:disabled="disabled"
+      :disabled="disabled"
       class="form__field"
-      v-bind:value="value"
-      v-on:input="handleInput"
-      v-bind:placeholder="label"
+      :value="value"
+      @input="handleInput"
+      :placeholder="label"
       id="name"
     />
     <label for="name" class="form__label">{{ label }}</label>
@@ -19,10 +19,6 @@ export default {
     value: { type: String, default: "" },
     label: { type: String, default: "Label" },
     disabled: { type: Boolean, default: false },
-  },
-  model: {
-    prop: "value",
-    event: "input",
   },
   name: "castom-input",
   methods: {

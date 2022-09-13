@@ -3,7 +3,7 @@
     <span class="md-display-1">User location: Ukraine</span>
     <div class="description-wrapper">
       <span class="md-headline">Languages:</span>
-      <md-list>
+      <md-list v-if="user.profile.languages">
         <md-list-item
           v-for="(item, index) in user.profile?.languages"
           :key="index"
@@ -14,7 +14,7 @@
     </div>
     <div class="description-wrapper">
       <span class="md-headline">Social links:</span>
-      <md-list>
+      <md-list v-if="user.profile.social">
         <md-list-item
           v-for="(item, index) in user.profile?.social"
           :key="index"
@@ -33,6 +33,14 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "profile-page",
+  data: function () {
+    return {
+      test: {
+        testData: undefined,
+      },
+      password: "",
+    };
+  },
   computed: { ...mapState(["user"]) },
   methods: {
     ...mapActions(["getProfileInfo"]),
