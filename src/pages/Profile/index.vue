@@ -5,7 +5,7 @@
       <span class="md-headline">Languages:</span>
       <md-list v-if="user.profile.languages">
         <md-list-item
-          v-for="(item, index) in user.profile?.languages"
+          v-for="(item, index) in user.profile.languages"
           :key="index"
         >
           {{ item }}
@@ -16,7 +16,7 @@
       <span class="md-headline">Social links:</span>
       <md-list v-if="user.profile.social">
         <md-list-item
-          v-for="(item, index) in user.profile?.social"
+          v-for="(item, index) in user.profile.social"
           :key="index"
           v-bind:href="item.link"
           target="_blank"
@@ -28,27 +28,24 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapActions, mapState } from "vuex";
-
 export default {
   name: "profile-page",
-  data: function () {
-    return {
-      test: {
-        testData: undefined,
-      },
-      password: "",
-    };
+  computed: {
+    ...mapState({
+      profile: (state) => state.user.profile,
+      user: (state) => state.user,
+    }),
   },
-  computed: { ...mapState(["user"]) },
   methods: {
     ...mapActions(["getProfileInfo"]),
   },
   created() {
     const { userId } = this.user;
+    const { dispatch } = this.$store;
     if (userId) {
-      this.getProfileInfo({ userId });
+      dispatch("getProfileInfo", { userId });
     }
   },
 };

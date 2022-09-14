@@ -7,7 +7,7 @@
           <router-link :to="{ name: 'profile-page' }">Profile</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'profile-page' }">About</router-link>
+          <router-link :to="{ name: 'news-page' }">News</router-link>
         </li>
       </ul>
     </nav>
@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: "header-component",
