@@ -1,38 +1,38 @@
 <template>
   <div>
-    <Header />
+    <Header v-if="isAutorized" />
     <router-view></router-view>
   </div>
 </template>
 
-<script lang="js">
-import Header from './components/Header/';
-import { mapState } from 'vuex';
+<script lang="ts">
+import Header from "./components/Header/index.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
   },
   computed: mapState({
-    isAutorized: ({ user }) =>  user.isAutorized
+    isAutorized: ({ user }) => user.isAutorized,
   }),
   created() {
-    if(this.isAutorized) {
-      this.$router.push({name: "profile-page"});
+    if (this.isAutorized) {
+      this.$router.push({ name: "profile-page" });
     } else {
-      this.$router.push({name: "login-page"});
+      this.$router.push({ name: "login-page" });
     }
   },
   watch: {
-    isAutorized (isAutorized) {
-      if(isAutorized) {
-        this.$router.push({name: "profile-page"});
+    isAutorized(isAutorized) {
+      if (isAutorized) {
+        this.$router.push({ name: "profile-page" });
       } else {
-        this.$router.push({name: "login-page"});
+        this.$router.push({ name: "login-page" });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

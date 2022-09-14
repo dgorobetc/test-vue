@@ -1,5 +1,5 @@
-<script lang="js">
-import Input from '@/components/Field';
+<script lang="ts">
+import Input from '../../components/Field';
 import { mapState } from 'vuex';
 export default {
   name: "login-page",
@@ -21,7 +21,6 @@ export default {
   components: {
     Input
   }
-
 };
 </script>
 

@@ -8,10 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^5.37.0",
+    "@vue/cli-plugin-typescript": "^5.0.8",
+    "@vue/eslint-config-typescript": "^11.0.1",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "typescript": "^4.8.3",
     "vue": "^2.73",
+    "vue-eslint-parser": "^9.1.0",
     "vue-material": "^1.0.0-beta-15",
+    "vue-property-decorator": "^9.1.2",
     "vue-router": "3",
     "vuex": "3"
   },
@@ -33,11 +39,9 @@
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/typescript/recommended"
     ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
     "rules": {}
   },
   "browserslist": [
